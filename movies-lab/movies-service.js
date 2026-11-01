@@ -6,3 +6,5 @@ export const searchByTitle = (movies, text) => movies.filter(movie => movie.titl
 export const hasMoviesBefore = (movies, year) => movies.some(movie => movie.year < year);
 export const allHaveDirector = movies => movies.every(movie => movie.directory?.name);
 export const getCastNames = movie => movie.cast.map(actor => actor.name);
+export const getDirectorTitles = (movies, directorName) => movies.filter(movie => movie.director.name === directorName).map(movie => movie.title);
+export const getTopRated = (movies, count) => [...movies].sort((a,b) => b.rating - a.rating).slice(0, count);
